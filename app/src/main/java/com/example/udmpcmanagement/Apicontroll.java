@@ -20,7 +20,7 @@ public class Apicontroll{
     public static int getLastId() {
 
         try {
-            URL url = new URL("http://211.108.168.75:8000/pcno/1");
+            URL url = new URL("http://:8000/pcno/1");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             String str;
 
@@ -43,7 +43,7 @@ public class Apicontroll{
     // Apicontroll.getPC(pcId) 로 사용
     public static List<String> getPC(int pcId) {
         try {
-            URL url = new URL("http://211.108.168.75:8000/pcread/" + pcId);
+            URL url = new URL("http://:8000/pcread/" + pcId);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             List<String> pc = new ArrayList<>();
             String str;
@@ -73,7 +73,7 @@ public class Apicontroll{
     public static void addPC(int pcId, String username, String cpu, String ram, String gpu) {
         try {
             String params = "?username=" + username + "&cpu=" + cpu + "&ram=" + ram + "&gpu=" + gpu;
-            URL url = new URL("http://211.108.168.75:8000/pcadd/" + pcId + params);
+            URL url = new URL("http:///pcadd/" + pcId + params);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             String str;
 
